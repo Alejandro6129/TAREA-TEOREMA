@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\textbf{TEOREMA 1}
+
+\textit{Una función no puede tender hacia dos límites diferentes en $a$. En otros términos, si $f$ tiende hacia $l$ en $a$ y $f$ tiende hacia $m$ en $a$, entonces $l = m$.}\\
+
+
+
+Puesto que $f$ tiende hacia $l$ en $a$, sabemos que para todo $\varepsilon > 0$ existe algún número $\delta_1 > 0$ tal que, para todo $x$,
+$$0 < |x - a| < \delta_1, \text{ entonces } |f(x) - l| < \varepsilon.$$
+
+Sabemos también, puesto que $f$ tiende hacia $m$ en $a$, que existe algún $\delta_2 > 0$ tal que, para todo $x$,
+$$0 < |x - a| < \delta_2, \text{ entonces } |f(x) - m| < \varepsilon.$$
+
+Hemos tenido que emplear dos números, $\delta_1$ y $\delta_2$, ya que no podemos asegurar a priori que el $\delta$ que funciona en una definición sirva también en la otra. Sin embargo, de hecho, es ahora fácil concluir que para todo $\varepsilon > 0$ existe algún $\delta > 0$ tal que para todo $x$,
+$$0 < |x - a| < \delta, \text{ entonces } |f(x) - l| < \varepsilon \quad \text{y} \quad |f(x) - m| < \varepsilon;$$
+basta simplemente elegir $\delta = \min(\delta_1, \delta_2)$.
+
+Ahora, para completar la demostración, solamente nos queda tomar un $x$ particular para el cual las dos condiciones
+$$|f(x) - l| < \varepsilon \quad \text{y} \quad |f(x) - m| < \varepsilon$$
+no puedan cumplirse a la vez si $l \neq m$. Si $l \neq m$, entonces $|l - m|$ es algún número positivo. Podemos tomar como $\varepsilon$ a $|l - m|/2$. Se sigue que existe un $\delta > 0$ tal que, para todo $x$,
+$$0 < |x - a| < \delta, \text{ entonces } |f(x) - l| < \frac{|l - m|}{2}$$
+y
+$$|f(x) - m| < \frac{|l - m|}{2}.$$
+
+
+
+Esto implica que para $0 < |x - a| < \delta$ tenemos
+$$|l - m| = |l - f(x) + f(x) - m| \leq |l - f(x)| + |f(x) - m|$$
+$$< \frac{|l - m|}{2} + \frac{|l - m|}{2} = |l - m|,$$
+lo cual es una contradicción.
+
+
+
+\end{document}
